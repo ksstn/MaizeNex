@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Create Account</title>
+    <link rel="icon" href="../img/maizenex logo.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/create-account.css">
+
+</head>
+
+<body>
+    <!-- Prodile Section -->
+    <section class="text-center pt-5 pb-3 shadow position-sticky" id="profile-area">
+        <div class="fs-5">
+            <p>Welcome to <span id="title">MaizeNex</span></p>
+        </div>
+
+        <div class="profile-wrapper">
+            <label for="fileInput" class="profile-box">
+                <span class="plus"><img src="../img/add-profile.png" class="rounded-circle" alt="Add Image" width="100"
+                        id="preview"></span>
+            </label>
+            <input type="file" id="fileInput" accept="image/*" hidden>
+        </div>
+    </section>
+
+    <!-- Account Form Section -->
+    <section id="account-form">
+        <div class="container-fluid">
+            <h5 class="text-center mt-3">Create Account</h5>
+
+            <label for="name">Full Name <span class="text-danger">*</span></label><br>
+            <div class="name-row mb-2">
+                <input type="text" id="fName" placeholder="First Name" class="rounded-2 px-2">
+                <input type="text" id="lName" placeholder="Last Name" class="rounded-2 px-2">
+            </div>
+            <div class="mb-2">
+                <label for="email">Email Address <span class="text-danger">*</span></label><br>
+                <input type="text" id="email" placeholder="maizenextech@gmail.com" class="rounded-2 px-2 w-100">
+            </div>
+
+            <div class="mb-2">
+                <label for="contact">Contact Number <span class="text-danger">*</span></label><br>
+                <input type="Number" id="contact" placeholder="0912 XXX XXXX" class="rounded-2 px-2 w-100">
+            </div>
+
+            <label for="address">Home Address <span class="text-danger">*</span></label><br>
+            <div class="address-row mb-2">
+                <input type="text" id="Barangay" placeholder="Barangay" class="rounded-2 px-2">
+                <input type="text" id="City/Municipality" placeholder="City/Municipality" class="rounded-2 px-2">
+            </div>
+
+            <div class="mb-2">
+                <label for="Gender">Gender <span class="text-danger">*</span></label><br>
+                <select id="Gender" class="rounded-2 px-2 w-100">
+                    <option class="fs-6" value="">Select Gender</option>
+                    <option class="fs-6" value="Male">Male</option>
+                    <option class="fs-6" value="Female">Female</option>
+                </select>
+            </div>
+
+            <div class="mb-2">
+                <label for="password">Password <span class="text-danger">*</span></label><br>
+                <div class="input-wrapper">
+                    <input type="password" id="password" placeholder="Enter your password" class="py-0 border-dark">
+                    <span class="toggle-eye" onclick="togglePassword('password', this)">
+                        <i class="fa-solid fa-eye-slash"></i>
+                    </span>
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <label for="confirmPassword">Confirm Password</label>
+                <div class="input-wrapper">
+                    <input type="password" id="confirmPassword" placeholder="Confirm your password"
+                        class="py-0 border-dark">
+                    <span class="toggle-eye" onclick="togglePassword('confirmPassword', this)">
+                        <i class="fa-solid fa-eye-slash"></i>
+                    </span>
+                </div>
+                <small id="matchMessage"></small>
+            </div>
+
+    </section>
+
+
+    <script src="../js/create-account.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

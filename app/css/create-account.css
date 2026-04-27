@@ -1,0 +1,80 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+#title {
+            font-family: "Oxanium", sans-serif;
+            font-weight: bold;
+            font-size: 1.4em;
+            margin: -25px 0 0 0;
+        }
+
+#profile-area{
+            background: linear-gradient(180deg, #e9f728, #18f544);
+            border-radius: 0 0 160px 160px;
+}
+.name-row, .address-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+    width: 100%;
+}
+
+.name-row input, .address-row input {
+    flex: 1;
+    min-width: 0; 
+    box-sizing: border-box;
+}
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 10px 40px 10px 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* password */
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 10px 40px 10px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+}
+
+.toggle-eye {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.input-error {
+    border: 2px solid red !important;
+}
+
+.input-success {
+    border: 2px solid green !important;
+}
+
+#matchMessage {
+    display: block;
+    font-size: 12px;
+    margin-top: 4px;
+    color: red;
+}
