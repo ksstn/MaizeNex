@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Create Account</title>
     <link rel="icon" href="../img/maizenex logo.png">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet">
@@ -19,78 +18,153 @@
 </head>
 
 <body>
+
     <!-- Prodile Section -->
-    <section class="text-center pt-5 pb-3 shadow position-sticky" id="profile-area">
-        <div class="fs-5">
+    <section class="text-center pt-5 pb-1 shadow position-sticky" id="profile-area">
+        <div class="fs-5 text-white">
             <p>Welcome to <span id="title">MaizeNex</span></p>
         </div>
 
         <div class="profile-wrapper">
             <label for="fileInput" class="profile-box">
-                <span class="plus"><img src="../img/add-profile.png" class="rounded-circle" alt="Add Image" width="100"
+                <span class="plus"><img src="../img/add-profile.png" class="rounded-circle" alt="Add Image"
                         id="preview"></span>
             </label>
             <input type="file" id="fileInput" accept="image/*" hidden>
         </div>
     </section>
 
+
     <!-- Account Form Section -->
     <section id="account-form">
-        <div class="container-fluid">
-            <h5 class="text-center mt-3">Create Account</h5>
+        <form id="createAccountForm">
+            <div class="container-fluid">
+                <h5 class="text-center mt-2">Create Account</h5>
 
-            <label for="name">Full Name <span class="text-danger">*</span></label><br>
-            <div class="name-row mb-2">
-                <input type="text" id="fName" placeholder="First Name" class="rounded-2 px-2">
-                <input type="text" id="lName" placeholder="Last Name" class="rounded-2 px-2">
-            </div>
-            <div class="mb-2">
-                <label for="email">Email Address <span class="text-danger">*</span></label><br>
-                <input type="text" id="email" placeholder="maizenextech@gmail.com" class="rounded-2 px-2 w-100">
-            </div>
-
-            <div class="mb-2">
-                <label for="contact">Contact Number <span class="text-danger">*</span></label><br>
-                <input type="Number" id="contact" placeholder="0912 XXX XXXX" class="rounded-2 px-2 w-100">
-            </div>
-
-            <label for="address">Home Address <span class="text-danger">*</span></label><br>
-            <div class="address-row mb-2">
-                <input type="text" id="Barangay" placeholder="Barangay" class="rounded-2 px-2">
-                <input type="text" id="City/Municipality" placeholder="City/Municipality" class="rounded-2 px-2">
-            </div>
-
-            <div class="mb-2">
-                <label for="Gender">Gender <span class="text-danger">*</span></label><br>
-                <select id="Gender" class="rounded-2 px-2 w-100">
-                    <option class="fs-6" value="">Select Gender</option>
-                    <option class="fs-6" value="Male">Male</option>
-                    <option class="fs-6" value="Female">Female</option>
-                </select>
-            </div>
-
-            <div class="mb-2">
-                <label for="password">Password <span class="text-danger">*</span></label><br>
-                <div class="input-wrapper">
-                    <input type="password" id="password" placeholder="Enter your password" class="py-0 border-dark">
-                    <span class="toggle-eye" onclick="togglePassword('password', this)">
-                        <i class="fa-solid fa-eye-slash"></i>
-                    </span>
+                <label for="name">Full Name <span class="text-danger">*</span></label><br>
+                <div class="name-row mb-2">
+                    <input type="text" id="fName" placeholder="First Name" class="rounded-2 px-2">
+                    <input type="text" id="lName" placeholder="Last Name" class="rounded-2 px-2">
                 </div>
-            </div>
-
-            <div class="mb-2">
-                <label for="confirmPassword">Confirm Password</label>
-                <div class="input-wrapper">
-                    <input type="password" id="confirmPassword" placeholder="Confirm your password"
-                        class="py-0 border-dark">
-                    <span class="toggle-eye" onclick="togglePassword('confirmPassword', this)">
-                        <i class="fa-solid fa-eye-slash"></i>
-                    </span>
+                <div class="mb-2">
+                    <label for="email">Email Address <span class="text-danger">*</span></label><br>
+                    <input type="text" id="email" placeholder="maizenextech@gmail.com" class="rounded-2 px-2 w-100">
                 </div>
-                <small id="matchMessage"></small>
-            </div>
 
+                <div class="mb-2">
+                    <label for="contact">Contact Number <span class="text-danger">*</span></label><br>
+                    <input type="text" id="contact" placeholder="0912 XXX XXXX" class="rounded-2 px-2 w-100">
+                </div>
+                <small id="phone-format"></small>
+
+                <label for="address">Home Address <span class="text-danger">*</span></label><br>
+                <div class="address-row mb-2">
+                    <input type="text" id="Barangay" placeholder="Barangay" class="rounded-2 px-2">
+                    <input type="text" id="City/Municipality" placeholder="City/Municipality" class="rounded-2 px-2">
+                </div>
+                <div class="mb-2">
+                    <input type="text" id="home-address" placeholder="Street Address, Building, etc."
+                        class="rounded-2 px-2 w-100">
+                </div>
+                <small id="home-Address"></small>
+
+                <div class="mb-2">
+                    <label for="Gender">Gender <span class="text-danger">*</span></label><br>
+                    <select id="Gender" class="rounded-2 px-2 w-100">
+                        <option class="fs-6" value="">Select Gender</option>
+                        <option class="fs-6" value="Male">Male</option>
+                        <option class="fs-6" value="Female">Female</option>
+                    </select>
+                </div>
+
+                <div class="mb-2">
+                    <label for="password">Password <span class="text-danger">*</span></label><br>
+                    <div class="input-wrapper">
+                        <input type="password" id="password" placeholder="Enter your password" class="py-0 border-dark">
+                        <span class="toggle-eye" onclick="togglePassword('password', this)">
+                            <i class="fa-solid fa-eye-slash"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="mb-2">
+                    <label for="confirmPassword">Confirm Password <span class="text-danger">*</span></label>
+                    <div class="input-wrapper">
+                        <input type="password" id="confirmPassword" placeholder="Confirm your password"
+                            class="py-0 border-dark">
+                        <span class="toggle-eye" onclick="togglePassword('confirmPassword', this)">
+                            <i class="fa-solid fa-eye-slash"></i>
+                        </span>
+                    </div>
+                    <small id="matchMessage"></small>
+                </div>
+
+                <div id="terms&condition" class="text-center">
+                    <input type="checkbox" id="terms" class="form-check-input">
+                    <label for="terms" class="form-check-label">I agree to the
+                        <a type="link" class="" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            terms and conditions
+                        </a></label>
+                    <div class="terms-reminder">Please check this box to agree with our terms and conditions before
+                        creating your account</div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Scrollable Modal</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+
+                            <div class="modal-body">
+                                <p>This is a scrollable modal example.</p>
+
+                                <!-- content-->
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <p>Repeat content...</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, excepturi ab
+                                    autem
+                                    ducimus, laudantium odio saepe facilis magnam exercitationem vitae ratione, quos
+                                    perspiciatis perferendis maiores dolore. Animi nobis cupiditate eos.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, excepturi ab
+                                    autem
+                                    ducimus, laudantium odio saepe facilis magnam exercitationem vitae ratione, quos
+                                    perspiciatis perferendis maiores dolore. Animi nobis cupiditate eos.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, excepturi ab
+                                    autem
+                                    ducimus, laudantium odio saepe facilis magnam exercitationem vitae ratione, quos
+                                    perspiciatis perferendis maiores dolore. Animi nobis cupiditate eos.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, excepturi ab
+                                    autem
+                                    ducimus, laudantium odio saepe facilis magnam exercitationem vitae ratione, quos
+                                    perspiciatis perferendis maiores dolore. Animi nobis cupiditate eos.</p>
+
+                            </div>
+
+                            <!-- Optional -->
+                            <!-- <div id="terms&condition" class="ms-1">
+                            <input type="checkbox" id="terms" class="form-check-input">
+                            <label for="terms" class="form-check-label color-primary">I agree to the terms and conditions
+                            </label>
+                        </div> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success rounded-5 px-5 w-100 mt-3" id="createAccountBtn">Create
+                        Account</button>
+
+                </div>
+
+                <p class="mt-1 text-center">I already have an acoount <a href="#">Sign in</a></p>
+            </div>
+        </form>
     </section>
 
 
