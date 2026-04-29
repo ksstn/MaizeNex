@@ -1,0 +1,33 @@
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     transition: all 0.3s ease;
+ }
+
+ #title {
+     font-family: "Oxanium", sans-serif;
+     font-weight:600;
+     font-size: 2em;
+     margin: -25px 0 0 0;
+ }
+  #profile-area {
+     background: linear-gradient(180deg, #e9f728, #0db72f);
+     border-radius: 0 0 150px 150px;
+ }
+ .toggle-eye {
+     position: absolute;
+     right: 10px;
+     top: 50%;
+     transform: translateY(-50%);
+     cursor: pointer;
+     font-size: 13px;
+ }
+
+ .input-wrapper {
+     position: relative;
+ }
+
+ .input-error {
+     border: 2px solid red !important;
+ }
