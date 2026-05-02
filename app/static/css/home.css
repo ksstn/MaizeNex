@@ -1,0 +1,108 @@
+  * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     transition: all 0.3s ease;
+ }
+ #title {
+     font-family: "Oxanium", sans-serif;
+     font-weight: bold;
+     font-size: 1.5em;
+     /* margin: -25px 0 0 0; */
+ }
+ html, body{
+    overflow-x: hidden !important; 
+ }
+ #header{
+     background: linear-gradient(180deg, #e9f728 30%,  #37fa5e);
+
+ }
+.weather-day-sunny {
+     background: linear-gradient(135deg, #87CEEB 0%, #4682B4 100%);
+ }
+ .weather-day-cloudy {
+     background: linear-gradient(135deg, #B0C4DE 0%, #778899 100%);
+ }
+ .weather-day-raining {
+     background: linear-gradient(135deg, #4682B4 0%, #2E8B57 100%);
+ }
+ .weather-night-sunny {
+     background: linear-gradient(135deg, #191970 0%, #000080 100%);
+ }
+ .weather-night-cloudy {
+     background: linear-gradient(135deg, #2F4F4F 0%, #696969 100%);
+ }
+ .weather-night-raining {
+     background: linear-gradient(135deg, #000080 0%, #191970 100%);
+ }
+ #weather-widget .card {
+     color: white;
+     border: none;
+     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+     width: 100%;
+     max-width: 600px;
+     margin: 0 auto;
+     height: auto;
+     max-height: 250px; /* Increased to show wind and humidity */
+ }
+ #weather-widget .card-body {
+     padding: 1rem;
+ }
+ #weather-widget .left-content {
+     text-align: left;
+ }
+ #weather-widget .date-year {
+     font-size: 1.1em;
+     font-weight: bold;
+ }
+ #weather-widget .condition {
+     font-size: 1em;
+     opacity: 0.9;
+ }
+ #weather-widget .temp {
+     font-size: 1.5em;
+     font-weight: bold;
+ }
+ #weather-widget .right-content img {
+     width: 100px;
+     height: 100px;
+ }
+ #weather-widget hr {
+     margin: 1rem 0;
+     border-color: rgba(255,255,255,0.3);
+ }
+ #weather-widget .bottom-section {
+     font-size: 0.9em;
+ }
+ #weather-widget .wind, #weather-widget .humidity {
+     opacity: 0.9;
+ }
+
+ /* Mobile Navigation */
+ .navbar.fixed-bottom {
+     border-top: 1px solid #dee2e6;
+     padding: 0.5rem 0;
+ }
+ .navbar .nav-link {
+     color: #6c757d;
+     text-decoration: none;
+     padding: 0.5rem;
+ }
+ .navbar .nav-link:hover {
+     color: #495057;
+ }
+ .scanner-circle {
+     width: 80px;
+     height: 80px;
+     background-color:  #edfa32;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: rgb(0, 0, 0);
+     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+     margin-top: -10px; /* To make it pop out */
+ }
+ .scanner-circle i {
+     font-size: 1.5rem;
+ }
