@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Community</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../static/css/community.css">
+  <link rel="stylesheet" href="../static/css/scanner.css">
+</head>
+
+<body>
+  <section id="header" class="py-3 shadow-sm">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-9 align-items-center d-flex">
+          <img src="../static/img/maizenex logo.png" width="40" alt="MaizeNex logo">
+          <span id="title" class="ms-2">MaizeNex</span>
+        </div>
+        <div class="col-3 text-end fs-4">
+          <i class="fa-solid fa-globe"></i>
+          <i class="fa-solid fa-bell ms-2"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="page-content">
+    <div class="container py-4">
+      <div class="feed-card mb-4" id="composer">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <div class="avatar">SD</div>
+          <div class="composer-input">
+            <input id="postText" class="post-input" type="text" placeholder="What's happening in your field?">
+          </div>
+          <label class="btn btn-outline-success btn-sm mb-0" for="postPhoto">
+            <i class="fa-solid fa-image"></i>
+          </label>
+        </div>
+        <input id="postPhoto" type="file" accept="image/*" hidden>
+        <div class="composer-preview hidden" id="composerPreview">
+          <img id="postPhotoPreview" src="" alt="Selected preview">
+        </div>
+        <div class="post-actions d-flex align-items-center justify-content-end">
+          <button id="postButton" class="btn btn-success btn-sm">Post</button>
+        </div>
+        <div class="upload-progress mt-3 hidden" id="uploadProgress">
+          <div class="upload-bar" id="uploadBar"></div>
+        </div>
+      </div>
+
+      <div id="feedList"></div>
+    </div>
+  </main>
+
+  <nav class="navbar fixed-bottom navbar-light bg-light d-md-none">
+    <div class="container-fluid">
+      <div class="row d-flex justify-content-around align-items-center ">
+
+        <div class="col-1 text-center">
+          <a href="home.html" class="nav-link d-flex flex-column align-items-center">
+            <i class="fas fa-home fa-lg"></i><br>
+            <small>Home</small>
+          </a>
+        </div>
+
+        <div class="col-1">
+          <a href="community.html" class="nav-link d-flex flex-column align-items-center active">
+            <i class="fas fa-users fa-lg"></i><br>
+            <small>Comm</small>
+          </a>
+        </div>
+
+        <div class="col-2 ms-3 justify-content-center d-flex">
+          <a href="#" class="nav-link scanner">
+            <div class="scanner-circle">
+              <i class="fa-solid fa-expand"></i>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-1">
+          <a href="#" class="nav-link d-flex flex-column align-items-center">
+            <i class="fas fa-lightbulb fa-lg"></i><br>
+            <small>Facts</small>
+          </a>
+        </div>
+
+        <div class="col-1 me-2 ">
+          <a href="#" class="nav-link d-flex flex-column align-items-center">
+            <i class="fas fa-user fa-lg"></i><br>
+            <small>Me</small>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script src="../static/js/scanner.js"></script>
+  <script src="../static/js/community.js"></script>
+</body>
+
+</html>
+
+
+
+    
