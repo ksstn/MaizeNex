@@ -1,5 +1,5 @@
 // Weather Widget
-const apiKey = 'YOUR_API_KEY'; // Replace with your actual API key
+const apiKey = 'f18e3afd78118350f4bf234d4e25a95b'; // Replace with your actual API key
 const city = 'Padre Garcia';
 const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
