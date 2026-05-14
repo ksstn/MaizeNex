@@ -59,6 +59,10 @@ body {
     width: 100%;
 }
 
+.post-input[readonly] {
+    cursor: pointer;
+}
+
 .post-input:focus {
     border-color: #198754;
     background: #fff;
@@ -72,6 +76,16 @@ body {
 .composer-input {
     flex: 1;
 }
+
+.composer-media {
+    height: 38px;
+    width: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
 
 .composer-preview {
     margin: 12px 0 8px;
@@ -90,6 +104,21 @@ body {
 .hidden {
     display: none;
 }
+
+.notification-badge {
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    background: #dc2626;
+    color: white;
+    border-radius: 999px;
+    font-size: 0.65rem;
+    padding: 2px 5px;
+    min-width: 18px;
+    text-align: center;
+    line-height: 1;
+}
+
 
 .image-modal {
     position: fixed;
@@ -177,12 +206,12 @@ body {
 .post-header {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 
 .post-menu {
     position: relative;
-    margin-left: 4px;
+    margin-left: auto;
 }
 
 .post-menu-button {
@@ -190,12 +219,13 @@ body {
     background: transparent;
     color: #6b7280;
     font-size: 1.1rem;
-    padding: 4px 6px;
+    padding: 4px 0 4px 6px;
 }
 
 .post-menu-list {
     position: absolute;
-    left: 0;
+    right: 0;
+    left: auto;
     top: 28px;
     background: white;
     border-radius: 10px;

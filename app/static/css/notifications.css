@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f4f6f8;
+  font-family: "Exo 2", sans-serif;
+  color: #1f2a37;
+}
+
+#header {
+  background-color: #edfa32;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+#title {
+  font-family: "Oxanium", sans-serif;
+  font-weight: 700;
+  font-size: 1.3em;
+}
+
+.page-content {
+  padding-bottom: 80px;
+}
+
+.notification-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.notification-item {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border-left: 4px solid #d1d5db;
+  background: #f8fafc;
+  cursor: pointer;
+}
+
+.notification-item.unread {
+  border-left-color: #198754;
+  background: #ecfdf3;
+}
+
+.notification-item.read {
+  color: #6b7280;
+  border-left-color: #d1d5db;
+}
+
+.notification-time {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-top: 6px;
+}

@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="control-panel">
-                    <p class="instruction-text">Position corn leaf within the scanner frame</p>
+                    <p class="instruction-text" data-i18n="scanner.instruction">Position corn leaf within the scanner frame</p>
 
                     <div class="container">
                         <div class="row text-end align-items-center">
@@ -56,27 +56,28 @@
                                 <img id="capturedImage" src="" alt="Captured leaf" class="captured-image">
                             </div>
                             <div class="result-details">
-                                <h5 class="result-title">Analysis Result</h5>
+                                <h5 class="result-title" data-i18n="scanner.result.title">Analysis Result</h5>
                                 <div class="analysis-sections">
                                     <div class="analysis-section">
-                                        <h6 class="section-title">Diagnosis</h6>
+                                        <h6 class="section-title" data-i18n="scanner.section.diagnosis">Diagnosis</h6>
                                         <p id="resultText" class="result-text"></p>
                                     </div>
                                     <div class="analysis-section">
-                                        <h6 class="section-title">Severity Assessment</h6>
+                                        <h6 class="section-title" data-i18n="scanner.section.severity">Severity Assessment</h6>
                                         <p id="severityText" class="severity-text"></p>
                                     </div>
                                     <div class="analysis-section">
-                                        <h6 class="section-title">Recommendation</h6>
+                                        <h6 class="section-title" data-i18n="scanner.section.recommendation">Recommendation</h6>
                                         <p id="recommendationText" class="recommendation-text"></p>
                                     </div>
                                     <div class="analysis-section">
-                                        <h6 class="section-title">Solution</h6>
+                                        <h6 class="section-title" data-i18n="scanner.section.solution">Solution</h6>
                                         <p id="solutionText" class="solution-text"></p>
                                     </div>
                                 </div>
                                 <div class="result-actions">
-                                    <button id="closeResultButton" class="btn btn-outline-success">Close</button>
+                                    <button id="scanAgainButton" class="btn btn-success" data-i18n="scanner.action.scan_again">Scan again?</button>
+                                    <button id="closeResultButton" class="btn btn-outline-success" data-i18n="scanner.action.close">Close</button>
                                 </div>
                             </div>
                         </div>

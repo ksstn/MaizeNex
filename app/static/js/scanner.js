@@ -35,12 +35,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const uploadButton = document.getElementById('uploadButton');
         const backButton = document.getElementById('backButton');
         const closeResultButton = document.getElementById('closeResultButton');
+        const scanAgainButton = document.getElementById('scanAgainButton');
         const resultSheet = document.querySelector('.result-modal-content');
         const resultDragHandle = document.getElementById('resultDragHandle');
         const imageUpload = document.getElementById('imageUpload');
         const scanResult = document.getElementById('scanResult');
         const capturedImage = document.getElementById('capturedImage');
         const resultText = document.getElementById('resultText');
+        const i18n = window.i18n;
+        const t = (key) => (i18n && typeof i18n.t === 'function' ? i18n.t(key) : key);
         let stream = null;
         let isDraggingSheet = false;
         let dragStartY = 0;
@@ -115,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 video.play();
             } catch (error) {
                 console.error('Error accessing camera:', error);
-                alert('Unable to access camera. Please check permissions.');
+                alert(t('scanner.error.camera'));
             }
         }
 
@@ -205,49 +208,49 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function performAnalysis() {
-            scanResult.textContent = 'Analyzing leaf nutrients...';
+            scanResult.textContent = t('scanner.status.analyzing');
 
             setTimeout(() => {
                 const analysisData = [
                     {
-                        diagnosis: 'Nitrogen deficiency detected',
-                        severity: 'Moderate - Leaf shows yellowing at edges',
-                        recommendation: 'Apply nitrogen-rich fertilizer immediately',
-                        solution: 'Use urea (46-0-0) at 50kg/ha or ammonium nitrate. Water thoroughly after application. Monitor improvement in 7-10 days.'
+                        diagnosisKey: 'scanner.analysis.nitrogen.diagnosis',
+                        severityKey: 'scanner.analysis.nitrogen.severity',
+                        recommendationKey: 'scanner.analysis.nitrogen.recommendation',
+                        solutionKey: 'scanner.analysis.nitrogen.solution'
                     },
                     {
-                        diagnosis: 'Healthy leaf - optimal nutrients',
-                        severity: 'None - Plant is in excellent condition',
-                        recommendation: 'Continue current fertilization program',
-                        solution: 'Maintain balanced NPK fertilization. Regular soil testing recommended every 3 months.'
+                        diagnosisKey: 'scanner.analysis.healthy.diagnosis',
+                        severityKey: 'scanner.analysis.healthy.severity',
+                        recommendationKey: 'scanner.analysis.healthy.recommendation',
+                        solutionKey: 'scanner.analysis.healthy.solution'
                     },
                     {
-                        diagnosis: 'Phosphorus deficiency detected',
-                        severity: 'Mild to Moderate - Stunted growth observed',
-                        recommendation: 'Apply phosphorus fertilizer',
-                        solution: 'Apply triple superphosphate (0-46-0) at 40kg/ha. Incorporate into soil around root zone. Best applied during planting.'
+                        diagnosisKey: 'scanner.analysis.phosphorus.diagnosis',
+                        severityKey: 'scanner.analysis.phosphorus.severity',
+                        recommendationKey: 'scanner.analysis.phosphorus.recommendation',
+                        solutionKey: 'scanner.analysis.phosphorus.solution'
                     },
                     {
-                        diagnosis: 'Potassium deficiency detected',
-                        severity: 'Moderate - Leaf margins browning',
-                        recommendation: 'Apply potassium-rich fertilizer',
-                        solution: 'Use potassium chloride (0-0-60) at 30kg/ha. Apply as side dressing. Avoid chloride-sensitive soils.'
+                        diagnosisKey: 'scanner.analysis.potassium.diagnosis',
+                        severityKey: 'scanner.analysis.potassium.severity',
+                        recommendationKey: 'scanner.analysis.potassium.recommendation',
+                        solutionKey: 'scanner.analysis.potassium.solution'
                     },
                     {
-                        diagnosis: 'Magnesium deficiency detected',
-                        severity: 'Mild - Interveinal chlorosis visible',
-                        recommendation: 'Apply magnesium supplement',
-                        solution: 'Apply Epsom salt (magnesium sulfate) foliar spray at 2% solution. For soil application, use dolomite lime at 100kg/ha.'
+                        diagnosisKey: 'scanner.analysis.magnesium.diagnosis',
+                        severityKey: 'scanner.analysis.magnesium.severity',
+                        recommendationKey: 'scanner.analysis.magnesium.recommendation',
+                        solutionKey: 'scanner.analysis.magnesium.solution'
                     }
                 ];
 
                 const randomAnalysis = analysisData[Math.floor(Math.random() * analysisData.length)];
 
                 capturedImage.src = canvas.toDataURL('image/png');
-                resultText.textContent = randomAnalysis.diagnosis;
-                document.getElementById('severityText').textContent = randomAnalysis.severity;
-                document.getElementById('recommendationText').textContent = randomAnalysis.recommendation;
-                document.getElementById('solutionText').textContent = randomAnalysis.solution;
+                resultText.textContent = t(randomAnalysis.diagnosisKey);
+                document.getElementById('severityText').textContent = t(randomAnalysis.severityKey);
+                document.getElementById('recommendationText').textContent = t(randomAnalysis.recommendationKey);
+                document.getElementById('solutionText').textContent = t(randomAnalysis.solutionKey);
 
                 document.querySelector('.scanner-overlay').style.display = 'none';
                 document.querySelector('.control-panel').style.display = 'none';
@@ -263,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 2000);
         }
 
-        closeResultButton.addEventListener('click', () => {
+        function resetResultView() {
             resultModal.style.display = 'none';
             onDragEnd();
             document.querySelector('.scanner-overlay').style.display = 'flex';
@@ -273,15 +276,32 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('recommendationText').textContent = '';
             document.getElementById('solutionText').textContent = '';
             capturedImage.src = '';
-            startCamera();
             scanResult.textContent = '';
-        });
+        }
 
-        scannerModalEl.addEventListener('hidden.bs.modal', () => {
+        function stopStream() {
             if (stream) {
                 stream.getTracks().forEach((track) => track.stop());
                 stream = null;
             }
+        }
+
+        if (scanAgainButton) {
+            scanAgainButton.addEventListener('click', () => {
+                resetResultView();
+                startCamera();
+            });
+        }
+
+        closeResultButton.addEventListener('click', () => {
+            resetResultView();
+            stopStream();
+            scannerModal.hide();
+            window.location.href = 'home.html';
+        });
+
+        scannerModalEl.addEventListener('hidden.bs.modal', () => {
+            stopStream();
             scanResult.textContent = '';
             resultText.textContent = '';
             document.getElementById('severityText').textContent = '';

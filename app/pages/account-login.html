@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="tl">
 
 <head>
     <meta charset="utf-8">
@@ -19,8 +19,8 @@
                 class="fa-solid fa-chevron-left"></i></button>
 
         <div class="fs-5 text-white text-center">
-            <p>Welcome to
-            <p id="title">MaizeNex</p>
+            <p data-i18n="login.welcome">Maligayang pagdating sa</p>
+            <p id="title" data-i18n="login.title">MaizeNex</p>
             </p>
         </div>
     </section>
@@ -29,15 +29,17 @@
     <section id="login">
         <div class="container">
             <form id="loginForm">
-                <h5 class="text-center mt-4">Log In to your Account</h5>
+                <h5 class="text-center mt-4" data-i18n="login.heading">Mag-log in sa iyong Account</h5>
                 <div class="mt-4">
-                    <label for="email">Email Address</label><br>
-                    <input type="text" id="email" placeholder=" Enter your email" class="mt-2 w-100 rounded-2">
+                    <label for="email" data-i18n="login.email">Email Address</label><br>
+                    <input type="text" id="email" data-i18n-placeholder="login.email" placeholder="Email Address"
+                        class="mt-2 w-100 rounded-2">
 
                     <div class="mt-2">
-                        <label for="password">Password <span class="text-danger">*</span></label><br>
+                        <label for="password"><span data-i18n="login.password">Password</span> <span class="text-danger">*</span></label><br>
                         <div class="input-wrapper">
-                            <input type="password" id="password" placeholder="Enter your password"
+                            <input type="password" id="password" data-i18n-placeholder="login.password"
+                                placeholder="Password"
                                 class="py-0 w-100 mt-2 rounded-2">
                             <span class="toggle-eye mt-1" onclick="togglePassword('password', this)">
                                 <i class="fa-solid fa-eye-slash"></i>
@@ -48,16 +50,16 @@
                     <div class="d-flex justify-content-between align-items-center mt-3">
                         <div>
                             <input type="checkbox" id="remember" class="me-1">
-                            <label for="remember">Remember me</label>
+                            <label for="remember" data-i18n="login.remember">Tandaan ako</label>
                         </div>
-                        <a href="#" class="text-decoration-none" onclick="forgotPassword()">Forgot password?</a>
+                        <a href="#" class="text-decoration-none" onclick="forgotPassword()" data-i18n="login.forgot">Nakalimutan ang password?</a>
                     </div>
                     <div class="text-center">
                         <button type="submit" class="btn btn-success w-75 rounded-4 mt-4"
-                            onclick="login(event)">Login</button>
+                            onclick="login(event)" data-i18n="login.button">Mag-log in</button>
 
-                        <p class="mt-2">Don't have an account? <a href="create-account.html"
-                                class="text-decoration-none">Sign up</a></p>
+                        <p class="mt-2"><span data-i18n="login.no_account">Wala ka pang account?</span> <a href="create-account.html"
+                                class="text-decoration-none" data-i18n="login.signup">Mag-sign up</a></p>
                     </div>
                 </div>
             </form>
@@ -65,6 +67,7 @@
 
 
     </section>
+    <script src="../static/js/i18n.js"></script>
     <script src="../static/js/account-login.js"></script>
 
 </body>

@@ -278,7 +278,9 @@
 }
 
 .result-actions {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
     padding-top: 15px;
     border-top: 1px solid rgba(76, 175, 80, 0.3);
 }
