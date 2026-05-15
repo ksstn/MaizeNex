@@ -21,7 +21,8 @@ MaizeNex is an AI-powered mobile application that detects nutrient deficiencies 
 - Environment Management: .env file for secure API keys
 - Tools: VS Code, npm, Git/GitHub
 
-# OpenWeather API Setup Guide
+
+OpenWeather API Setup Guide
 # Step 1: Install Node.js
 Node.js is required for the weather API feature of the system.
 
