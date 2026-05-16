@@ -12,8 +12,10 @@
      margin: -25px 0 0 0;
  }
   #profile-area {
-     background: linear-gradient(180deg, #e9f728, #0db72f);
-     border-radius: 0 0 150px 150px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+         url('../img/corn plants.jpg');
+     background-size: cover;
+    border-radius: 0 0 200px 200px  / 0 0 70px 70px ;
  }
  .toggle-eye {
      position: absolute;
