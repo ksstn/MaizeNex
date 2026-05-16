@@ -24,11 +24,11 @@ html, body {
 }
 
 .weather-day-cloudy {
-    background: linear-gradient(135deg, #B0C4DE 0%, #778899 100%);
+    background: linear-gradient(135deg, #B0C4DE 0%, #519be4 100%);
 }
 
 .weather-day-raining {
-    background: linear-gradient(135deg, #4682B4 0%, #2E8B57 100%);
+    background: linear-gradient(135deg, #4682B4 0%, #28a45e 100%);
 }
 
 .weather-night-sunny {
@@ -36,7 +36,7 @@ html, body {
 }
 
 .weather-night-cloudy {
-    background: linear-gradient(135deg, #2F4F4F 0%, #696969 100%);
+    background: linear-gradient(135deg, #66b9b9 0%, #210666 100%);
 }
 
 .weather-night-raining {
@@ -52,6 +52,7 @@ html, body {
     margin: 0 auto;
     height: auto;
     max-height: 250px;
+    border-radius: 15px;
 }
 
 #weather-widget .card-body {
@@ -63,7 +64,7 @@ html, body {
 }
 
 #weather-widget .date-year {
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: bold;
 }
 
@@ -73,13 +74,15 @@ html, body {
 }
 
 #weather-widget .temp {
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: bold;
 }
 
 #weather-widget .right-content img {
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: auto;
+    margin-left: 3em;
+    padding: 0;
 }
 
 #weather-widget hr {
@@ -110,4 +113,12 @@ html, body {
 
 .navbar .nav-link:hover {
     color: #495057;
+}
+.post-interactions .btn.active {
+    background: rgba(25, 135, 84, 0.12);
+    color: #198754;
+}
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+    color: #198754;
 }

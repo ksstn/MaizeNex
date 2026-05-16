@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
         feedList.innerHTML = '';
         posts.forEach((post) => {
             const card = document.createElement('div');
-            card.className = 'feed-card mb-4';
+            card.className = 'feed-card mb-2';
             card.dataset.postId = post.id;
             card.id = `post-${post.id}`;
 
@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 : '';
 
             card.innerHTML = `
-                <div class="post-header mb-3">
+                <div class="post-header mb-4">
                     <div class="d-flex align-items-center gap-2">
                         <div class="avatar">${post.initials}</div>
                         <div>

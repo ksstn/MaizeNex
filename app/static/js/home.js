@@ -1,6 +1,6 @@
 // Weather Widget
 const apiKey = 'YOUR_API_KEY_HERE'; // Replace with your actual API key
-const city = 'Padre Garcia';
+const city = 'Tanauan';
 const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 let lastWeatherData = null;
 const i18n = window.i18n;
@@ -36,11 +36,12 @@ function renderWeather(data) {
             <div class="card-body">
                 <div class="top-section d-flex align-items-center mb-3">
                     <div class="left-content">
-                        <div class="date-year mb-1">${dayDate}</div>
-                        <div class="condition mb-1">${condition}</div>
                         <div class="temp">${data.main.temp}°C</div>
+                        <div class="date-year mb-1">${dayDate}</div><br>
+                        <div class="condition mb-1">${condition}</div>
+                        
                     </div>
-                    <div class="right-content ms-5">
+                    <div class="right-content">
                         <img src="${iconUrl}" alt="${data.weather[0].description}">
                     </div>
                 </div>
