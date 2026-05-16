@@ -19,22 +19,50 @@
      color: transparent;
  }
 
- #account-form {
-     border-radius: 200px 200px 0 0 / 50px 50px 0 0;
-     background-color: white;
- }
+#account-form {
+    border-radius: 200px 200px 0 0 / 50px 50px 0 0;
+    background-color: #ffffff;
+    margin: 12px auto 0;
+    max-width: 720px;
+}
 
- .cover-container {
+#account-form .container-fluid {
+    padding: 20px 18px 28px;
+}
+
+#account-form label {
+    display: inline-block;
+    margin: 8px 0 6px;
+    font-weight: 600;
+}
+
+#account-form input:not([type="checkbox"]),
+#account-form select {
+    width: 100%;
+    min-height: 40px;
+    border: 1px solid #d6d6d6;
+    border-radius: 8px;
+    padding: 8px 12px;
+    background-color: #ffffff;
+    font-size: 15px;
+}
+
+#account-form .btn {
+    border-radius: 10px;
+    min-height: 46px;
+}
+
+.cover-container {
      background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
          url('../img/corn plants.jpg');
      background-size: cover;
  }
 
- .profile-wrapper {
+.profile-wrapper {
      margin: 20px 0;
  }
 
- .profile-box {
+.profile-box {
      display: inline-block;
      width: 120px;
      height: 120px;
@@ -46,61 +74,48 @@
      transition: all 0.3s ease;
  }
 
- .profile-box:hover {
+.profile-box:hover {
      border-color: #fff;
      background: rgba(255, 255, 255, 0.3);
  }
 
- #preview {
+#preview {
      width: 100%;
      height: 100%;
      object-fit: cover;
      border-radius: 50%;
  }
 
- .name-row,
- .address-row {
-     display: flex;
-     gap: 10px;
-     margin-top: 8px;
-     width: 100%;
- }
+.name-row,
+.address-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 6px;
+    width: 100%;
+}
 
- .name-row input,
- .address-row input {
+.name-row input,
+.address-row input {
      flex: 1;
      min-width: 0;
      box-sizing: border-box;
  }
 
- .input-wrapper {
-     position: relative;
-     width: 100%;
- }
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
 
- .input-wrapper input {
-     width: 100%;
-     padding: 10px 40px 10px 10px;
-     border-radius: 8px;
-     border: 1px solid #ccc;
-     box-sizing: border-box;
- }
+.input-wrapper input {
+    width: 100%;
+    padding: 10px 40px 10px 12px;
+    border: 1px solid #d6d6d6;
+    border-radius: 8px;
+    outline: none;
+    box-sizing: border-box;
+}
 
- /* password */
- .input-wrapper {
-     position: relative;
-     width: 100%;
- }
-
- .input-wrapper input {
-     width: 100%;
-     padding: 10px 40px 10px 10px;
-     border: 1px solid #ccc;
-     border-radius: 6px;
-     outline: none;
- }
-
- .toggle-eye {
+.toggle-eye {
      position: absolute;
      right: 10px;
      top: 50%;
@@ -109,22 +124,22 @@
      font-size: 13px;
  }
 
- .input-error {
+.input-error {
      border: 2px solid red !important;
  }
 
- .input-success {
+.input-success {
      border: 2px solid green !important;
  }
 
- #matchMessage {
+#matchMessage {
      display: block;
      font-size: 12px;
      margin-top: 4px;
      color: red;
  }
 
- .error {
+.error {
      color: red;
      font-size: 11px;
      margin-top: 2px;
@@ -132,7 +147,7 @@
      padding: 0 2px;
  }
 
- #terms-error {
+#terms-error {
      color: red;
      font-size: 11px;
      margin-top: 2px;
@@ -140,18 +155,18 @@
  }
 
  /* Gender dropdown mobile font size */
- #Gender option {
+#Gender option {
      font-size: 11px;
  }
 
- @media (max-width: 768px) {
-     #Gender option {
-         font-size: 12px;
-     }
- }
+@media (max-width: 768px) {
+    #Gender option {
+        font-size: 12px;
+    }
+}
 
- /* Terms and conditions reminder */
- .terms-reminder {
+/* Terms and conditions reminder */
+.terms-reminder {
      color: #666;
      font-size: 12px;
      margin-top: 5px;

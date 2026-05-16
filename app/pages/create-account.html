@@ -43,7 +43,7 @@
         <section id="account-form">
             <form id="createAccountForm">
                 <div class="container-fluid">
-                    <h5 class="text-center mt-2 pb-3 pt-5 fs-3 fw-bold" data-i18n="create.account">Gumawa ng Account
+                    <h5 class="text-center mt-0 pb-3 pt-4 fs-3 fw-bold" data-i18n="create.account">Gumawa ng Account
                     </h5>
 
                     <label for="name"><span data-i18n="create.full_name">Buong Pangalan</span> <span
@@ -118,17 +118,18 @@
                         <small id="matchMessage"></small>
                     </div>
 
-                    <div id="terms&condition" class="text-center">
-                        <input type="checkbox" id="terms" class="form-check-input">
-                        <label for="terms" class="form-check-label"><span data-i18n="create.terms_label">Sumasang-ayon
-                                ako sa</span>
+                    <div id="terms&condition" class="form-check d-flex align-items-center text-center gap-2">
+                        <input type="checkbox" id="terms" class="form-check-input mb-0">
+                        <label for="terms" class="form-check-label mb-0 text-center"><span
+                                data-i18n="create.terms_label">Sumasang-ayon ako sa</span>
                             <a type="link" class="" data-bs-toggle="modal" data-bs-target="#exampleModal"
                                 data-i18n="create.terms_link">
                                 mga termino at kundisyon
                             </a></label>
-                        <div class="terms-reminder" data-i18n="create.terms_reminder">Paki-check ang kahon upang
-                            makapagpatuloy sa paggawa ng account.</div>
                     </div>
+                    <div id="terms-error" class="invalid-feedback d-block"></div>
+                    <div class="terms-reminder text-center" data-i18n="create.terms_reminder">Paki-check ang kahon upang
+                        makapagpatuloy sa paggawa ng account.</div>
 
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"

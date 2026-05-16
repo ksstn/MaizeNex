@@ -284,19 +284,14 @@ form.addEventListener("submit", function (e) {
     }
 
     // Terms and Conditions Validation
-    let termsError = document.getElementById("terms-error");
+    const termsError = document.getElementById("terms-error");
     if (!termsCheckbox.checked) {
-        if (!termsError) {
-            termsError = document.createElement("div");
-            termsError.id = "terms-error";
-            termsCheckbox.parentElement.appendChild(termsError);
-        }
-        termsError.textContent = "You must agree to the terms and conditions";
-        valid = false;
-    } else {
         if (termsError) {
-            termsError.textContent = "";
+            termsError.textContent = "You must agree to the terms and conditions";
         }
+        valid = false;
+    } else if (termsError) {
+        termsError.textContent = "";
     }
 
     // Final check 
