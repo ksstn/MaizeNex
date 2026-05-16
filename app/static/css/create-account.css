@@ -7,14 +7,27 @@
 
  #title {
      font-family: "Oxanium", sans-serif;
-     font-weight: bold;
-     font-size: 1.4em;
+     font-weight: 900;
+     font-size: 2em;
      margin: -25px 0 0 0;
+     background: linear-gradient(90deg, #e5ff00, #10b030);
+
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+
+     background-clip: text;
+     color: transparent;
  }
 
- #profile-area {
-     background: linear-gradient(180deg, #e9f728,  #0db72f);
-     border-radius: 0 0 150px 150px;
+ #account-form {
+     border-radius: 200px 200px 0 0 / 50px 50px 0 0;
+     background-color: white;
+ }
+
+ .cover-container {
+     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+         url('../img/corn plants.jpg');
+     background-size: cover;
  }
 
  .profile-wrapper {

@@ -19,135 +19,148 @@
 
 <body>
 
-    <!-- Prodile Section -->
-    <section class="text-center pt-5 pb-1 shadow position-sticky" id="profile-area">
-        <div class="fs-5 text-white">
-            <p><span data-i18n="create.welcome">Maligayang pagdating sa</span> <span id="title">MaizeNex</span></p>
-        </div>
-
-        <div class="profile-wrapper">
-            <label for="fileInput" class="profile-box">
-                <span class="plus"><img src="../static/img/add-profile.png" class="rounded-circle" alt="Add Image"
-                        id="preview"></span>
-            </label>
-            <input type="file" id="fileInput" accept="image/*" hidden>
-        </div>
-    </section>
+    <!-- Profile Section -->
+    <div class="cover-container">
 
 
-    <!-- Account Form Section -->
-    <section id="account-form">
-        <form id="createAccountForm">
-            <div class="container-fluid">
-                <h5 class="text-center mt-2" data-i18n="create.account">Gumawa ng Account</h5>
+        <section class="text-center pt-5 pb-1 position-sticky" id="profile-area">
+            <div class="fs-5 text-white">
+                <p><span data-i18n="create.welcome">Maligayang pagdating sa</span><br> <span id="title">MaizeNex</span>
+                </p>
+            </div>
 
-                <label for="name"><span data-i18n="create.full_name">Buong Pangalan</span> <span class="text-danger">*</span></label><br>
-                <div class="name-row mb-2">
-                    <input type="text" id="fName" data-i18n-placeholder="create.first_name" placeholder="Pangalan"
-                        class="rounded-2 px-2">
-                    <input type="text" id="lName" data-i18n-placeholder="create.last_name" placeholder="Apelyido"
-                        class="rounded-2 px-2">
-                </div>
-                <div class="mb-2">
-                    <label for="email"><span data-i18n="create.email">Email Address</span> <span class="text-danger">*</span></label><br>
-                    <input type="text" id="email" data-i18n-placeholder="create.email" placeholder="Email Address"
-                        class="rounded-2 px-2 w-100">
-                </div>
+            <div class="profile-wrapper">
+                <label for="fileInput" class="profile-box">
+                    <span class="plus"><img src="../static/img/add-profile.png" class="rounded-circle" alt="Add Image"
+                            id="preview"></span>
+                </label>
+                <input type="file" id="fileInput" accept="image/*" hidden>
+            </div>
+        </section>
 
-                <div class="mb-2">
-                    <label for="contact"><span data-i18n="create.contact">Numero ng Contact</span> <span class="text-danger">*</span></label><br>
-                    <input type="text" id="contact" data-i18n-placeholder="create.contact" placeholder="Numero ng Contact"
-                        class="rounded-2 px-2 w-100">
-                </div>
-                <small id="phone-format"></small>
 
-                <label for="address"><span data-i18n="create.address">Tirahan</span> <span class="text-danger">*</span></label><br>
-                <div class="address-row mb-2">
-                    <input type="text" id="Barangay" data-i18n-placeholder="create.barangay" placeholder="Barangay"
-                        class="rounded-2 px-2">
-                    <input type="text" id="City/Municipality" data-i18n-placeholder="create.city"
-                        placeholder="Lungsod/Munisipyo" class="rounded-2 px-2">
-                </div>
-                <div class="mb-2">
-                    <input type="text" id="home-address" data-i18n-placeholder="create.street"
-                        placeholder="Street Address, Building, at iba pa"
-                        class="rounded-2 px-2 w-100">
-                </div>
-                <small id="home-Address"></small>
+        <!-- Account Form Section -->
+        <section id="account-form">
+            <form id="createAccountForm">
+                <div class="container-fluid">
+                    <h5 class="text-center mt-2 pb-3 pt-5 fs-3 fw-bold" data-i18n="create.account">Gumawa ng Account
+                    </h5>
 
-                <div class="mb-2">
-                    <label for="Gender"><span data-i18n="create.gender">Kasarian</span> <span class="text-danger">*</span></label><br>
-                    <select id="Gender" class="rounded-2 px-2 w-100">
-                        <option class="fs-6" value="" data-i18n="create.gender_select">Pumili ng Kasarian</option>
-                        <option class="fs-6" value="Male" data-i18n="create.gender_male">Lalaki</option>
-                        <option class="fs-6" value="Female" data-i18n="create.gender_female">Babae</option>
-                    </select>
-                </div>
-
-                <div class="mb-2">
-                    <label for="password"><span data-i18n="create.password">Password</span> <span class="text-danger">*</span></label><br>
-                    <div class="input-wrapper">
-                        <input type="password" id="password" data-i18n-placeholder="create.password"
-                            placeholder="Password" class="py-0 border-dark">
-                        <span class="toggle-eye" onclick="togglePassword('password', this)">
-                            <i class="fa-solid fa-eye-slash"></i>
-                        </span>
+                    <label for="name"><span data-i18n="create.full_name">Buong Pangalan</span> <span
+                            class="text-danger">*</span></label><br>
+                    <div class="name-row mb-2">
+                        <input type="text" id="fName" data-i18n-placeholder="create.first_name" placeholder="Pangalan"
+                            class="rounded-2 px-2">
+                        <input type="text" id="lName" data-i18n-placeholder="create.last_name" placeholder="Apelyido"
+                            class="rounded-2 px-2">
                     </div>
-                </div>
-
-                <div class="mb-2">
-                    <label for="confirmPassword"><span data-i18n="create.confirm_password">Kumpirmahin ang Password</span> <span class="text-danger">*</span></label>
-                    <div class="input-wrapper">
-                        <input type="password" id="confirmPassword" data-i18n-placeholder="create.confirm_password"
-                            placeholder="Kumpirmahin ang Password"
-                            class="py-0 border-dark">
-                        <span class="toggle-eye" onclick="togglePassword('confirmPassword', this)">
-                            <i class="fa-solid fa-eye-slash"></i>
-                        </span>
+                    <div class="mb-2">
+                        <label for="email"><span data-i18n="create.email">Email Address</span> <span
+                                class="text-danger">*</span></label><br>
+                        <input type="text" id="email" data-i18n-placeholder="create.email" placeholder="Email Address"
+                            class="rounded-2 px-2 w-100">
                     </div>
-                    <small id="matchMessage"></small>
-                </div>
 
-                <div id="terms&condition" class="text-center">
-                    <input type="checkbox" id="terms" class="form-check-input">
-                    <label for="terms" class="form-check-label"><span data-i18n="create.terms_label">Sumasang-ayon ako sa</span>
-                        <a type="link" class="" data-bs-toggle="modal" data-bs-target="#exampleModal" data-i18n="create.terms_link">
-                            mga termino at kundisyon
-                        </a></label>
-                    <div class="terms-reminder" data-i18n="create.terms_reminder">Paki-check ang kahon upang makapagpatuloy sa paggawa ng account.</div>
-                </div>
+                    <div class="mb-2">
+                        <label for="contact"><span data-i18n="create.contact">Numero ng Contact</span> <span
+                                class="text-danger">*</span></label><br>
+                        <input type="text" id="contact" data-i18n-placeholder="create.contact"
+                            placeholder="Numero ng Contact" class="rounded-2 px-2 w-100">
+                    </div>
+                    <small id="phone-format"></small>
 
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-scrollable">
-                        <div class="modal-content">
+                    <label for="address"><span data-i18n="create.address">Tirahan</span> <span
+                            class="text-danger">*</span></label><br>
+                    <div class="address-row mb-2">
+                        <input type="text" id="Barangay" data-i18n-placeholder="create.barangay" placeholder="Barangay"
+                            class="rounded-2 px-2">
+                        <input type="text" id="City/Municipality" data-i18n-placeholder="create.city"
+                            placeholder="Lungsod/Munisipyo" class="rounded-2 px-2">
+                    </div>
+                    <div class="mb-2">
+                        <input type="text" id="home-address" data-i18n-placeholder="create.street"
+                            placeholder="Street Address, Building, at iba pa" class="rounded-2 px-2 w-100">
+                    </div>
+                    <small id="home-Address"></small>
 
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel" data-i18n="create.modal_title">Mga Termino at Kundisyon</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
+                    <div class="mb-2">
+                        <label for="Gender"><span data-i18n="create.gender">Kasarian</span> <span
+                                class="text-danger">*</span></label><br>
+                        <select id="Gender" class="rounded-2 px-2 w-100">
+                            <option class="fs-6" value="" data-i18n="create.gender_select">Pumili ng Kasarian</option>
+                            <option class="fs-6" value="Male" data-i18n="create.gender_male">Lalaki</option>
+                            <option class="fs-6" value="Female" data-i18n="create.gender_female">Babae</option>
+                        </select>
+                    </div>
 
-                            <div class="modal-body">
-                                <p data-i18n="create.modal_body">Ito ay halimbawa lamang ng nilalaman para sa mga termino at kundisyon.</p>
+                    <div class="mb-2">
+                        <label for="password"><span data-i18n="create.password">Password</span> <span
+                                class="text-danger">*</span></label><br>
+                        <div class="input-wrapper">
+                            <input type="password" id="password" data-i18n-placeholder="create.password"
+                                placeholder="Password" class="py-0 border-dark">
+                            <span class="toggle-eye" onclick="togglePassword('password', this)">
+                                <i class="fa-solid fa-eye-slash"></i>
+                            </span>
+                        </div>
+                    </div>
 
+                    <div class="mb-2">
+                        <label for="confirmPassword"><span data-i18n="create.confirm_password">Kumpirmahin ang
+                                Password</span> <span class="text-danger">*</span></label>
+                        <div class="input-wrapper">
+                            <input type="password" id="confirmPassword" data-i18n-placeholder="create.confirm_password"
+                                placeholder="Kumpirmahin ang Password" class="py-0 border-dark">
+                            <span class="toggle-eye" onclick="togglePassword('confirmPassword', this)">
+                                <i class="fa-solid fa-eye-slash"></i>
+                            </span>
+                        </div>
+                        <small id="matchMessage"></small>
+                    </div>
+
+                    <div id="terms&condition" class="text-center">
+                        <input type="checkbox" id="terms" class="form-check-input">
+                        <label for="terms" class="form-check-label"><span data-i18n="create.terms_label">Sumasang-ayon
+                                ako sa</span>
+                            <a type="link" class="" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                data-i18n="create.terms_link">
+                                mga termino at kundisyon
+                            </a></label>
+                        <div class="terms-reminder" data-i18n="create.terms_reminder">Paki-check ang kahon upang
+                            makapagpatuloy sa paggawa ng account.</div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel" data-i18n="create.modal_title">Mga
+                                        Termino at Kundisyon</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <p data-i18n="create.modal_body">Ito ay halimbawa lamang ng nilalaman para sa mga
+                                        termino at kundisyon.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success rounded-5 px-5 w-100 mt-3" id="createAccountBtn"
+                            data-i18n="create.button">Gumawa
+                            ng Account</button>
+                    </div>
+                    <p class="mt-1 text-center"><span data-i18n="create.have_account">May account na ako</span> <a
+                            href="account-login.html" data-i18n="create.sign_in">Mag-sign in</a></p>
                 </div>
-
-                <div class="text-center">
-                    <button type="submit" class="btn btn-success rounded-5 px-5 w-100 mt-3" id="createAccountBtn" data-i18n="create.button">Gumawa
-                        ng Account</button>
-
-                </div>
-
-                <p class="mt-1 text-center"><span data-i18n="create.have_account">May account na ako</span> <a href="account-login.html" data-i18n="create.sign_in">Mag-sign in</a></p>
-            </div>
-        </form>
-    </section>
-
+            </form>
+        </section>
+    </div>
 
     <script src="../static/js/i18n.js"></script>
     <script src="../static/js/create-account.js"></script>
